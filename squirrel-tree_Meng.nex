@@ -1,0 +1,49 @@
+#NEXUS
+
+begin TREES;
+
+	TRANSLATE
+		1 'Paramys_copei',
+		2 'Paramys_delicatus',
+		3 'Pseudotomus_horribilis',
+		4 'Pseudotomus_oweni',
+		5 'Pseudotomus_petersoni',
+		6 'Pseudotomus_hians',
+		7 'Reithroparamys_delicatissimus',
+		8 'Rapamys_atramontis',
+		9 'Ischyromys_typus',
+		10 'Cedromus_wilsoni',
+		11 'Protosciurus_rachelae',
+		12 'Sciurus_carolinensis',
+		13 'Sciurus_granatensis',
+		14 'Tamiasciurus_hudsonicus',
+		15 'Tamias_minimus',
+		16 'Funisciurus_pyrropus',
+		17 'Heliosciurus_rufobrachium',
+		18 'Paraxerus_cepapi',
+		19 'Protoxerus_stangeri',
+		20 'Aeromys_tephromelas',
+		21 'Glaucomys_volans',
+		22 'Petaurista_petaurista',
+		23 'Hylopetes_spadiceus',
+		24 'Petinomys_setosus',
+		25 'Pteromyscus_pulverulentus',
+		26 'Pteromys_volans',
+		27 'Rhinosciurus_laticaudatus',
+		28 'Callosciurus_sp',
+		29 'Lariscus_insignis',
+		30 'Dremomys_rufigenis',
+		31 'Ratufa_affinis',
+		32 'Aplodontia_rufa',
+		33 'Mesogaulus_paniensis',
+		34 'Prosciurus_relictus',
+		35 'Xerus_rutilus',
+		36 'Marmota_marmota',
+		37 'Cynomys_ludovicianus',
+		38 'Urocitellus_richardsonii';
+
+
+	TREE 'Edited, based on Default Symmetrical Tree+++++' = (((((((((((12,13),14),11),((((25,20),26),22),((23,24),21))),(((((((18,16),19),17),15),(36,(37,38))),35),(((29,28),27),30))),31),10),(34,(32,33))),9),(8,7)),((6,5,3,4),(1,2)));
+end;
+
+
