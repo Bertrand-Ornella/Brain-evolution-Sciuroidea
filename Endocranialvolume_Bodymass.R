@@ -4,12 +4,7 @@
 library(phytools) #open tree
 library(ggplot2) #plots
 library(nlme) # GLS analysis
-library(AICcmodavg) # AIC 
 library(RRPP) #pairwise comparaisons
-library(geiger) # pANCOVA
-library(evomap) # pANCOVA
-require(devtools)
-install_github("JeroenSmaers/evomap")
 
 #directory
 setwd("~/Desktop/Squirrel_June_8_2020/Code")
