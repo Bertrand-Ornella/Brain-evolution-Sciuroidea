@@ -3,6 +3,7 @@
 library(coin) #one_way test
 library(rcompanion) #pairwisePermutationTest
 library(ggpubr) #ggboxplot
+library(car) #Levene's test
 
 #directory
 setwd("~/Desktop/Squirrel_June_8_2020/Code")
@@ -34,6 +35,12 @@ squirrel.data$Ecology = factor(squirrel.data$Ecology, levels = c("Arboreal","Fos
 PT_PEQ<-pairwisePermutationTest(PEQ_Meng~Ecology,data=squirrel.data,method="fdr")
 PT_PEQ
 
+#Test if data normally distributed (Normally distributed)
+shapiro.test(squirrel.data$PEQ_Meng)
+
+# Bartlett test when data are normally distrubuted (YES there is homogeneity of variances)
+bartlett.test(PEQ_Meng ~ Ecology, data = squirrel.data)
+
 ############Olfactory bulb permutation test
 
 ##ggplot - boxplot - OB
@@ -50,6 +57,12 @@ squirrel.data2$Ecology = factor(squirrel.data2$Ecology, levels = c("Arboreal","F
 
 PT_OB<-pairwisePermutationTest(OB_percentage~Ecology,data=squirrel.data2,method="fdr")
 PT_OB
+
+#Test if data normally distributed (not normally distributed)
+shapiro.test(squirrel.data2$OB_percentage)
+
+# Levene's test when data are not normally distrubuted (YES there is homogeneity of variances)
+leveneTest(OB_percentage ~ Ecology, data = squirrel.data2)
 
 #############Petrosal lobule permutation test
 
@@ -68,6 +81,12 @@ squirrel.data3$Ecology = factor(squirrel.data3$Ecology, levels = c("Arboreal","F
 PT_PL<-pairwisePermutationTest(PL_percentage~Ecology,data=squirrel.data3,method="fdr")
 PT_PL
 
+#Test if data normally distributed (Normally distributed)
+shapiro.test(squirrel.data3$PL_percentage)
+
+# Bartlett test when data are normally distrubuted (YES there is homogeneity of variances)
+bartlett.test(PL_percentage ~ Ecology, data = squirrel.data3)
+
 ############ Neocortex permutation test
 
 ##ggplot - boxplot - Neocortex
@@ -85,6 +104,12 @@ squirrel.data4$Ecology = factor(squirrel.data4$Ecology, levels = c("Arboreal","F
 
 PT_Neo<-pairwisePermutationTest(Neocortex_surface_percentage~Ecology,data=squirrel.data4,method="fdr")
 PT_Neo
+
+#Test if data normally distributed (Not normally distributed)
+shapiro.test(squirrel.data4$Neocortex_surface_percentage)
+
+# Levene's test when data are not normally distrubuted (NO there is not homogeneity of variances)
+leveneTest(Neocortex_surface_percentage ~ Ecology, data = squirrel.data4)
 
 ### END
 
